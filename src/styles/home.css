@@ -1,0 +1,25 @@
+
+
+.row>*{
+    padding-top: 50px;
+}
+
+.btn__purchase button{
+    display: flex;
+    width: 45px;
+    height: 45px;
+    background-color: #F85555;
+    border-radius: 50%;
+}
+
+.fa-cart-shopping{
+
+    position: relative;
+    color: #ffffff;
+    width: 6px;
+    justify-content: center;
+    top: 13px;
+    left: 12px;
+  
+    
+}
