@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { setIsLoading } from "./isLoading.slice";
 import getConfig from "../../utils/getConfig";
+import {getPurchase } from "./purchase.slice";
 
 
 export const cartSlice = createSlice({
@@ -36,5 +37,16 @@ export const addToCart = (product) => (dispatch) => {
        
 
 };
+
+export const buy = () => (dispatch) => {
+    dispatch(setIsLoading(true));
+    return axios
+        .get("https://ecommerce-api-react.herokuapp.com/api/v1/purchases",{}, getConfig())
+        .then(() => {
+            dispatch(getPurchase())
+            dispatch(setCart([]))
+        })
+        .finally(() => dispatch(setIsLoading(false)));
+}
   
 export default cartSlice.reducer;

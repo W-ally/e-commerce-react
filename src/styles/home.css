@@ -6,8 +6,11 @@
 
 .btn__purchase button{
     display: flex;
+    position: relative;
+    left: 70%;
     width: 45px;
     height: 45px;
+    top:-20px;
     background-color: #F85555;
     border-radius: 50%;
 }
@@ -23,3 +26,23 @@
   
     
 }
+
+.card-img, .card-img-bottom, .card-img-top{
+    align-items: center;
+    display: flex;
+    height: 250px;
+    justify-content: center;
+    position: relative;
+}
+.price-1{
+    color: rgb(188, 183, 183);
+    font-size: 18px;
+}
+.price-2{
+    font-size: 21px;
+}
+
+
+
+
+

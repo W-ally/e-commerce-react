@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Card, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
 import { filterCategory } from "../store/slices/products.slice";
 import { addToCart } from "../store/slices/cart.slice";
+import { Card, Col, Row } from "react-bootstrap";
+
 
 const ProductDetail = () => {
   const [products, setProducts] = useState([]);
@@ -38,37 +39,91 @@ const ProductDetail = () => {
   console.log(products);
 
   return (
-    <div>
-      <Card>
-        <h1>{products.title} </h1>
+  <div >
+      <div className="title-detail">
+        
+        <h1>home - {products.title} </h1>
+       </div>
+     
+      <div className="ctn-detail">
+         <div className="ctn-img"><img src={products.productImgs} alt="" srcset="" /></div>
+        
+        <div className="ctn-text"> 
+        
+           <h1>{products.title} </h1>
+           <p> {products.description}</p>
 
-        <input
-          type="number"
-          placeholder="quantity"
-          onChange={(e) => setQuantity(e.target.value)}
-          value={quantity}
-        />
-        <Button onClick={addProduct}>Add to product</Button>
-        <Card.Img
-          variant="top"
-          src={products.productImgs}
-          className="fluid-img"
-        />
+         <div className="ctn-text-1">
+        <h2>Price</h2>
+        <h2>Quantity</h2>
+       
+      </div>
+
+       <div className="ctn-text-2">
+      
+       <h3>US${products.price}</h3>
+       
+       <input
+           type="number"
+           placeholder="quantity"
+           onChange={(e) => setQuantity(e.target.value)}
+           value={quantity}
+         />
+     
+        </div>    
+              
+       
+       <div className="ctn-btn"> 
+       <button onClick={addProduct} type="submit">Add to Cart</button>
+       </div>
+         
+        </div>
+      </div>
+      <Row xs={1} md={2} lg={3} className="g-4">
+   
+   {
+     product.map(productItem=>(
+       
+       <Col>
+       <Card  style={{cursor:"pointer"}} onClick={()=>navigate(`/product/${productItem.id}`)}>
         <Card.Body>
-          <Card.Text>{products.description}</Card.Text>
-          <p></p>
-          <Card.Title>US${products.price}</Card.Title>
-          <Card.Title>{products.status}</Card.Title>
-        </Card.Body>
+         <Card.Title>
+           {productItem.title}
+         </Card.Title>
+                 
+       </Card.Body>
+        <Card.Img variant="top"
+         src={productItem.productImgs} alt="" srcset="" />
+          <Card.Title>
+           <p>Price</p>
+           {productItem.price}
+         </Card.Title>
+         <div className="btn__purchase">
+           
+            <button>
+            <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+         </div>
       </Card>
+      
+      
+      </Col>
+     
+     ))
+   }
+ </Row>
+       
 
-      {product.map((productItem) => (
-        <li onClick={() => navigate(`/product/${productItem.id} `)}>
-          {productItem.title}
-        </li>
-      ))}
-      <div> <Button onClick={addProduct}>Add to product</Button></div>
-    </div>
+      
+
+      
+
+
+      
+  </div>
+         
+          
+   
   );
 };
 

@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ListGroup, Offcanvas } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { buy, getCart } from "../store/slices/cart.slice";
 
 const Cart = ({ show, handleClose }) => {
    const cartProducts = useSelector(state=>state.cart);
    const navigate= useNavigate();
+   const dispatch = useDispatch();
+   
     const selectProduct=(cartProduct)=>{
       handleClose();
       navigate(`/product/${cartProduct.id}`)
     }
+
+    useEffect(()=>{
+    dispatch(getCart())
+    },[dispatch])
 
     return (
         <div>
@@ -33,17 +40,27 @@ const Cart = ({ show, handleClose }) => {
               </div>
             ))}
           </ListGroup>
-        </Offcanvas.Body>
-      </Offcanvas>
+        <div  className='purchase-total'>
+           <span>Total</span>
+          <h3>US$ 0</h3>
+
         </div>
+
+          
+          <button  className="btn__purchase-2" onClick={()=>dispatch(buy())}>
+          checkout
+        </button>
+        </Offcanvas.Body>
+        
+      </Offcanvas>
+
+      <div>
+       
+      </div>
+  </div>
     );
-    /*const getDate = purchaseDate => {
-        const event = new Date(purchaseDate);
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        const date = event.toLocaleDateString('en-us', options);
-        return date;  
-    }
-*/ 
+  
+
 };
 
 export default Cart;

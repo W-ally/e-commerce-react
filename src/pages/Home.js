@@ -74,8 +74,9 @@ const Home = () => {
            <Card.Img variant="top"
             src={productItem.productImgs} alt="" srcset="" />
              <Card.Title>
-              <p>Price</p>
-              {productItem.price}
+              <br />
+              <p className="price-1">Price</p>
+              <h1 className="price-2">US${productItem.price}</h1>
             </Card.Title>
             <div className="btn__purchase">
               
@@ -91,9 +92,9 @@ const Home = () => {
         ))
       }
     </Row>
-      </Col>
+  </Col>
       
-      </Row>
+  </Row>
     
     </div>
   );

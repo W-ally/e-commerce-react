@@ -5,7 +5,7 @@ import getConfig from "../../utils/getConfig";
 
 
 export const purchaseSlice = createSlice({
-    name: 'purchases',
+    name: 'purchase',
     initialState: [],
     reducers: {
         setPurchases:(state, action)=>{
@@ -18,10 +18,10 @@ export const purchaseSlice = createSlice({
 export const { setPurchases } = purchaseSlice.actions;
 
 export const getPurchase = () => (dispatch) => {
-    dispatch(setIsLoading(true));
+    dispatch(setIsLoading(true))
     return axios
-        .get("https://ecommerce-api-react.herokuapp.com/api/v1/purchases", getConfig())
-        .then((res) => dispatch(res.data))
+        .get ("https://ecommerce-api-react.herokuapp.com/api/v1/purchases", getConfig())
+        .then((res) => dispatch(setPurchases(res.data.data.purchases)))
         .finally(() => dispatch(setIsLoading(false)));
 }
 

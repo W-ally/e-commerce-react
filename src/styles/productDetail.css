@@ -1,0 +1,69 @@
+.title-detail h1{
+    font-size: 16px;
+    position: relative;
+    top: 15px;
+}
+
+.ctn-detail{
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+}
+.ctn-list{
+    display: block;
+}
+
+
+.ctn-text h1{
+    font-size: 24px;
+    text-align: center;
+}
+
+.ctn-text p{
+    font-size: 16px;
+    text-align: justify;
+    margin: 5px;
+    
+    
+}
+.ctn-img img{
+    width: 40vw;
+    height: 40vh;
+}
+.ctn-text-1{
+    display: flex;
+    gap: 270px;
+    justify-content: flex-start;
+    margin: 5px;
+    padding-left: 10px;
+    padding-top: 20px;
+   
+}
+.ctn-text h2{
+    display: flex;
+    font-size: 16px;
+    color: rgb(201, 201, 201);
+}
+.ctn-text-2{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    font-weight: lighter;
+}
+.ctn-btn button{
+    background-color:#F85555 ;
+    width: 50vw;
+    height: 50px;
+    color: white;
+    text-align: center;
+   
+
+}
+
+.ctn-btn{
+    margin-top: 10px;
+}
+.bold{
+font-weight: bold;
+}
+

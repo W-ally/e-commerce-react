@@ -6,6 +6,9 @@ import { useSelector } from "react-redux";
 import "./App.css";
 import "./styles/nav-style.css"
 import "./styles/home.css"
+import "./styles/productDetail.css"
+import "./styles/purchase.css"
+import "./styles/login.css"
 
 function App() {
   const isLoading = useSelector((state) => state.isLoading);

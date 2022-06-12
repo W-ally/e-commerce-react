@@ -27,9 +27,22 @@ const Login = () => {
 
   return (
     <div>
+
       <Card style={{ maxWidth: "500px" }} className="mx-auto">
         <Card.Body>
-          <h1>Login</h1>
+          <div className="h1">
+          <p>Welcome! Enter your email and password to continue
+          </p>
+    
+          </div>
+          <div className="h2">
+          <h1>Test data</h1>
+          <h3>mason@gmail.com</h3>
+          <h3>mason1234</h3>
+          </div>
+
+          <h1 className="h3">Login</h1>
+
           <Form onSubmit={handleSubmit(submit)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
@@ -51,8 +64,8 @@ const Login = () => {
                 placeholder="Password"
               />
             </Form.Group>
-            <Button variant="primary" type="submit">
-              Submit
+            <Button  className="btn-primary" variant="primary" type="submit">
+              Log in
             </Button>
           </Form>
         </Card.Body>

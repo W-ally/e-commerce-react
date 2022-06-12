@@ -39,9 +39,8 @@ const NavBar = () => {
             <Nav className="me-auto">
               <Nav.Link className='icon' href="/#/login"> <i class="fa-regular fa-user"></i> </Nav.Link>
               <Nav.Link className='icon' href="/#/purchases"><i class="fa-solid fa-bag-shopping"></i> </Nav.Link>
-              <Nav.Link className='icon' role="button"  onClick={handleShow}><i class="fa-solid fa-cart-shopping"></i> </Nav.Link>
-              <Nav.Link role="button" onClick={logout}>
-                Log out
+              <Nav.Link className='icon' role="button"  onClick={handleShow}><i class="fa-solid fa-cart-arrow-down"></i></Nav.Link>
+              <Nav.Link  className='icon' role="button" onClick={logout}><i class="fa-solid fa-rectangle-xmark"></i>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

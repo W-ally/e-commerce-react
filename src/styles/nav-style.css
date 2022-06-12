@@ -45,6 +45,9 @@ i:hover{
 .navbar  .icon{
     width: 15%;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 14px;
     border: none;
     background: none;
@@ -52,6 +55,8 @@ i:hover{
     line-height: 0;
     
 }
+
+
 
 @media (min-width: 992px){
    
